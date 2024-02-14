@@ -46,7 +46,8 @@ export const SearchCommand = () => {
   }, [toggle]);
 
   const onSelect = (id: string) => {
-    router.push(`/documents/${id}`);
+    const updatedId = id.split("-")[0];
+    router.push(`/documents/${updatedId}`);
     onClose();
   };
   if (!isMounted) return null;
